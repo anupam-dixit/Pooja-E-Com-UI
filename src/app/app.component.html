@@ -1,0 +1,21 @@
+<ng-container *ngIf="router.url.includes('panel')">
+  <ng-container *ngIf="!router.url.includes('login')">
+    <app-panel-top-nav></app-panel-top-nav>
+    <div id="layoutSidenav">
+      <app-panel-side-nav></app-panel-side-nav>
+      <div id="layoutSidenav_content">
+        <main>
+          <!-- Main page content-->
+          <router-outlet></router-outlet>
+        </main>
+        <app-panel-footer></app-panel-footer>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="router.url.includes('login')">
+    <router-outlet></router-outlet>
+  </ng-container>
+</ng-container>
+<ng-container *ngIf="!router.url.includes('panel')">
+  <router-outlet></router-outlet>
+</ng-container>

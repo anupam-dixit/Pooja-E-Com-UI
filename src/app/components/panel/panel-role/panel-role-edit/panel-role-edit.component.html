@@ -1,0 +1,26 @@
+<form [formGroup]="form" (submit)="save()">
+  <div class="card mt-n10">
+    <div class="card-header">Edit Role
+        <span *ngIf="loading"><i class='fa-duotone fa-spinner fa-pulse fa-lg bold float-end'></i></span>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <label for="title">Role Title</label>
+          <div class="input-group input-group-joined">
+            <span class="input-group-text"><i class="fa-solid fa-user-unlock"></i></span>
+            <input formControlName="title" id="title" class="form-control ps-0" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary float-end" [disabled]="loading">
+        <ng-container *ngIf="!loading">
+          Save
+        </ng-container>
+        <app-btn-loader *ngIf="loading"></app-btn-loader>
+      </button>
+    </div>
+  </div>
+</form>

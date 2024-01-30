@@ -1,0 +1,52 @@
+<form enctype="multipart/form-data" [formGroup]="form" (submit)="save()">
+  <div class="card mt-n10">
+    <div class="card-header">Create Sub Category</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <label for="title">Sub Category Title</label>
+          <div class="input-group input-group-joined">
+            <span class="input-group-text"><i class="fa-solid fa-layer-group"></i></span>
+            <input formControlName="title" id="title" class="form-control ps-0" type="text">
+          </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <label for="category_id">Category</label>
+          <div class="input-group input-group-joined">
+            <span class="input-group-text"><i class="fa-solid fa-layer-group"></i></span>
+            <select formControlName="category_id" id="category_id" class="form-control" >
+              <ng-container *ngFor="let c of categories">
+                <option value="{{c._id}}">{{c.title}}</option>
+              </ng-container>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <label for="title">Image</label>
+          <div class="input-group input-group-joined">
+            <span class="input-group-text"><i class="fa-solid fa-layer-group"></i></span>
+            <input name="file" (change)="onFile($event)" id="file" class="form-control ps-0" type="file">
+          </div>
+        </div>
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <img class="img-thumbnail" [src]="Env.BASEPOINT+data.media[0].path">
+        </div>
+      </div>
+      <div class="row mt-2" *ngIf="displayImage">
+        <div class="col">
+          <div class="card">
+            <img [src]="displayImage" class="img-thumbnail">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary float-end" [disabled]="loading">
+        <ng-container *ngIf="!loading">
+          Save
+        </ng-container>
+        <app-btn-loader *ngIf="loading"></app-btn-loader>
+      </button>
+    </div>
+  </div>
+</form>
