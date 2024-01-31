@@ -27,6 +27,8 @@ import { PanelSubCategoryComponent } from './components/panel/panel-sub-category
 import { PanelSubCategoryEditComponent } from './components/panel/panel-sub-category/panel-sub-category-edit/panel-sub-category-edit.component';
 import { PanelSubCategoryCreateComponent } from './components/panel/panel-sub-category/panel-sub-category-create/panel-sub-category-create.component';
 import { PanelSubCategoryListComponent } from './components/panel/panel-sub-category/panel-sub-category-list/panel-sub-category-list.component';
+import { HomepageCarousel1Component } from './components/common/homepage/homepage-carousel-1/homepage-carousel-1.component';
+import { HomepageCategoryCarouselComponent } from './components/common/homepage/homepage-category-carousel/homepage-category-carousel.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { PanelSubCategoryListComponent } from './components/panel/panel-sub-cate
     PanelSubCategoryEditComponent,
     PanelSubCategoryCreateComponent,
     PanelSubCategoryListComponent,
+    HomepageCarousel1Component,
+    HomepageCategoryCarouselComponent,
   ],
     imports: [
         BrowserModule,
