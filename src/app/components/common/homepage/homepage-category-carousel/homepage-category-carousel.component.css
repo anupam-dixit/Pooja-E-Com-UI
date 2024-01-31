@@ -1,0 +1,11 @@
+.carousel-cell {
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.carousel-cell img {
+  width: 100%;
+  object-fit: cover;
+}

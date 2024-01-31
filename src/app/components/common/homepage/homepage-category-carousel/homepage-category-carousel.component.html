@@ -1,0 +1,9 @@
+<div class="row mt-3 pt-4 pb-4">
+  <div class="col">
+    <div class="categ-carousel">
+      <div class="carousel-cell shadow-lg mt-2 mb-5" *ngFor="let c of categories">
+        <img [src]="Env.BASEPOINT+c.media[0].path" >
+      </div>
+    </div>
+  </div>
+</div>
